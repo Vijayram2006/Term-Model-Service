@@ -22,6 +22,6 @@ def health():
     return {"status": "ok"}
 
 app.include_router(auth.router)
-app.include_router(terms.router)
-app.include_router(term_selfsame.router)
-app.include_router(term_synonym.router)
+app.include_router(terms.router, prefix="/terms", tags=["terms"])
+app.include_router(term_selfsame.router, prefix="/term-selfsame", tags=["term_selfsame"])
+app.include_router(term_synonym.router, prefix="/term-synonym", tags=["term_synonym"])
